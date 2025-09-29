@@ -76,11 +76,11 @@
 
       <label>Resposta:</label>
       <p class="resultado-resposta">${resposta}</p>
-      <button class="btn-copiar">Copiar Resposta</button>
 
       <label>Categoria:</label>
       <p>${categoria}</p>
 
+      <button class="btn-copiar">Copiar Resposta</button>
       <button class="btn-fechar" type="button">Fechar</button>
     `;
     abrirModal(modalResultado, content);

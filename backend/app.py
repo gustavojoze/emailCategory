@@ -7,7 +7,17 @@ from flask_cors import CORS
 from model_utils import gerar_json
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://127.0.0.1:5500"}})
+from flask_cors import CORS
+
+CORS(app, resources={
+    r"/*": {
+        "origins": [
+            "http://127.0.0.1:5500",                
+            "https://email-category-ashen.vercel.app" 
+        ]
+    }
+})
+
 
 app.config["MAX_CONTENT_LENGTH"] = 5 * 1024 * 1024
 EXTENSOES_PERMITIDAS = {"txt", "pdf"}
