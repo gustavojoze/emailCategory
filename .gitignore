@@ -1,0 +1,13 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual env
+venv/
+.env
+
+# Histórico temporário
+historicoEmails.json
+
+# Outros arquivos gerados
+*.log

@@ -1,0 +1,241 @@
+    /* ===== Reset simples ===== */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 16px;
+    }
+
+    body {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        background: #f6f7fb;
+        color: #222;
+        line-height: 1.5;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* ===== Layout ===== */
+    header,
+    footer {
+        background: #2563eb;
+        color: #fff;
+        padding: 1rem 2rem;
+    }
+
+    header nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+     .header-iconHistorico{
+          filter: invert(1);
+    }
+
+    main {
+        flex: 1;
+        max-width: 760px;
+        margin: 2rem auto;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    footer {
+        text-align: center;
+        font-size: 0.875rem;
+    }
+
+    /* ===== Form ===== */
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+
+    textarea,
+    input[type="file"] {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 1rem;
+        background: #f9fafb;
+    }
+
+    button {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        background: #2563eb;
+        color: #fff;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.2s ease-in-out;
+    }
+
+    button:hover {
+        background: #1e4ed8;
+    }
+
+    button:disabled {
+        background: #94a3b8;
+        cursor: not-allowed;
+    }
+
+    /* ===== Modais ===== */
+    .container-modalResultado,
+    .container-modalHistorico {
+        display: none;
+        /* só abre via JS */
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    
+
+    .modal-content {
+        background: #fff;
+        padding: 2rem;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content h1 {
+        margin-bottom: 1rem;
+    }
+
+    .modal-content label {
+        font-weight: bold;
+        margin-top: 1rem;
+        display: block;
+    }
+
+    /* ===== Histórico ===== */
+    .container-historicoEmails {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        margin-top: 1rem;
+    }
+
+    .historicoEmail {
+        background: #f3f4f6;
+        padding: 0.75rem 1rem;
+        border-radius: 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .historicoEmail:hover {
+        background: #e5e7eb;
+    }
+
+    .historicoEmail .categoria {
+        font-size: 0.875rem;
+        font-weight: bold;
+        color: #2563eb;
+    }
+
+
+    .historicoEmail summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.historicoEmail summary::-webkit-details-marker { display: none; }
+
+.historicoEmail .seta {
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.historicoEmail[open] .seta {
+  transform: rotate(90deg);
+}
+
+.historicoEmail .detalhes {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+/* Modais (se já tiver, mantenha) */
+.container-modalResultado,
+.container-modalHistorico {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff; padding: 2rem; border-radius: 12px;
+  width: 90%; max-width: 720px; max-height: 90vh; overflow-y: auto;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.2);
+}
+.modal-content h1 { margin-bottom: 1rem; }
+.modal-content label { font-weight: bold; margin-top: 1rem; display: block; }
+.modal-content .btn-fechar {
+  margin-top: 1rem; padding: .6rem 1rem; border: 0; border-radius: 8px;
+  background: #2563eb; color: #fff; cursor: pointer;
+}
+
+/* Histórico no modal */
+.lista-historico { list-style: none; display: flex; flex-direction: column; gap: .75rem; padding: 0; margin: .75rem 0 0; }
+.historicoEmail { background: #f3f4f6; border-radius: 10px; padding: .25rem .5rem; }
+
+.historicoEmail details summary {
+  list-style: none;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; cursor: pointer; padding: .5rem;
+}
+.historicoEmail details summary::-webkit-details-marker { display: none; }
+
+.categoria-badge {
+  font-size: .85rem; font-weight: 700; padding: .15rem .5rem; border-radius: 999px;
+  background: #e5e7eb; color: #111827;
+}
+.categoria-badge.ok   { background: rgba(43,182,115,.15); color:#0b7e4f; }
+.categoria-badge.warn { background: rgba(255,122,89,.15); color:#b54b30; }
+
+.historicoEmail .seta svg { transition: transform .2s ease; }
+.historicoEmail details[open] .seta svg { transform: rotate(90deg); }
+
+.historicoEmail .detalhes {
+  margin: .25rem .5rem 1rem; padding: .75rem; border-radius: 8px;
+  background: #fff; border: 1px solid #e5e7eb;
+}
+.historicoEmail .detalhes a { color: #2563eb; text-decoration: none; }
+.historicoEmail .detalhes a:hover { text-decoration: underline; }

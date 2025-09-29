@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EmailCategory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>EmailCategory</h1>
+<button id="btn-historico" type="button" title="Histórico">
+  <img class="header-iconHistorico" src="./assets/icone-historico.svg" alt="Histórico" width="50" height="50" color="white">
+</button>
+    </nav>
+  </header>
+
+  <main>
+  <form id="form-email" enctype="multipart/form-data">
+  <div>
+    <h2>Coloque o email a ser respondido:</h2>
+    <label for="email-texto">Texto do Email</label>
+    <textarea id="email-texto" name="email_texto"></textarea>
+    <button type="submit" id="btn-resultado">Enviar</button>
+  </div>
+  <div>
+  <label for="email-arquivo">Upload (PDF ou TXT):</label>
+  <input type="file" id="email-arquivo" name="email_arquivo" accept=".pdf,.txt">
+  <button type="button" id="btn-upload">Upload</button>
+</div>
+</form>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 EmailCategory</p>
+  </footer>
+
+  <section class="container-modalResultado"></section>
+  <section class="container-modalHistorico"></section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
