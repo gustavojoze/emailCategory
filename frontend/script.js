@@ -12,7 +12,7 @@
   const modalResultado = qs(".container-modalResultado");
   const modalHistorico = qs(".container-modalHistorico");
 
-  const API_BASE = "http://127.0.0.1:5000"; 
+  const API_BASE = "https://emailcategory.onrender.com"; 
 
   function abrirModal(modal, content) {
     modal.innerHTML = `<div class="modal-content">${content}</div>`;
